@@ -7,3 +7,4 @@ resources:
   - instances/cp4i-apic-ibm-cp4i-apic-instance.yaml
   - instances/cp4i-pn-ibm-platform-navigator-instance.yaml
   - operators/openshift-operators-ibm-ace-operator.yaml
+  - operators/openshift-operators-ibm-mq-operator.yaml
