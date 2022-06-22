@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - base/cp4i-apic-ibm-entitlement-key.yaml
   - base/cp4i-es-ibm-entitlement-key.yaml
+  - base/cp4i-mq-cluster-ibm-entitlement-key.yaml
   - base/namespace-cp4i-ace.yaml
   - base/namespace-cp4i-es.yaml
   - base/namespace-cp4i-mq-cluster.yaml
