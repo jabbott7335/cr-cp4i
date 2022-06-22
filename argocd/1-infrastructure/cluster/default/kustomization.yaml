@@ -5,6 +5,7 @@ resources:
   - base/namespace-cp4i-mq-cluster.yaml
   - base/namespace-cp4i-pn.yaml
   - base/namespace-toolkit.yaml
+  - base/openshift-marketplace-ibm-entitlement-key.yaml
   - base/toolkit-cluster-config.yaml
   - base/toolkit-console-link-job-rbac.yaml
   - base/toolkit-console-link-job-sa.yaml
