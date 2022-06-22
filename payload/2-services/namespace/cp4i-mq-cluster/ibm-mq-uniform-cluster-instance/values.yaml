@@ -1,0 +1,81 @@
+"mq_uniform_cluster_instance":
+  "configMap":
+    "ini":
+      "AutoCluster":
+      - "Repository2Conname=uniform-cluster-qm1-ibm-mq.cp4i-mq-cluster.svc(1414)"
+      - "Repository2Name=QM1"
+      - "Repository1Conname=uniform-cluster-qm2-ibm-mq.cp4i-mq-cluster.svc(1414)"
+      - "Repository1Name=QM2"
+      - "ClusterName=UNICLUS"
+      - "Type=Uniform"
+      "name": "mq-uniform-cluster-ini-cm"
+    "mqsc":
+      "name": "mq-uniform-cluster-mqsc-cm"
+    "qm1_mqsc":
+      "commands":
+      - "alter chl(UNICLUS_QM1) chltype(CLUSRCVR) conname('uniform-cluster-qm1-ibm-mq.cp4i-mq-cluster.svc(1414)')"
+      - "alter chl(UNICLUS_QM2) chltype(CLUSSDR) conname('uniform-cluster-qm2-ibm-mq.cp4i-mq-cluster.svc(1414)')"
+      "name": "mq-uniform-cluster-qm1-mqsc-cm"
+    "qm2_mqsc":
+      "commands":
+      - "alter chl(UNICLUS_QM1) chltype(CLUSSDR) conname('uniform-cluster-qm1-ibm-mq.cp4i-mq-cluster.svc(1414)')"
+      - "alter chl(UNICLUS_QM2) chltype(CLUSRCVR) conname('uniform-cluster-qm2-ibm-mq.cp4i-mq-cluster.svc(1414)')"
+      "name": "mq-uniform-cluster-qm2-mqsc-cm"
+    "qm3_mqsc":
+      "commands":
+      - "alter chl(UNICLUS_QM1) chltype(CLUSSDR) conname('uniform-cluster-qm1-ibm-mq.cp4i-mq-cluster.svc(1414)')"
+      - "alter chl(UNICLUS_QM2) chltype(CLUSSDR) conname('uniform-cluster-qm2-ibm-mq.cp4i-mq-cluster.svc(1414)')"
+      - "alter chl(UNICLUS_QM3) chltype(CLUSRCVR) conname('uniform-cluster-qm3-ibm-mq.cp4i-mq-cluster.svc(1414)')"
+      "name": "mq-uniform-cluster-qm3-mqsc-cm"
+  "license":
+    "accept": true
+    "license": "L-RJON-C7QG3S"
+    "metric": "VirtualProcessorCore"
+    "use": "NonProduction"
+  "queueManager":
+    "availability":
+      "type": "SingleInstance"
+    "ini":
+    - "configMap":
+        "items":
+        - "config.ini"
+        "name": "mq-uniform-cluster-ini-cm"
+    "logFormat": "Basic"
+    "mqsc":
+    - "configMap":
+        "items":
+        - "common_config.mqsc"
+        "name": "mq-uniform-cluster-mqsc-cm"
+    "name": "QM"
+    "resources":
+      "limits":
+        "cpu": "500m"
+        "memory": "1Gi"
+      "requests":
+        "cpu": "500m"
+        "memory": "1Gi"
+    "route":
+      "enabled": true
+    "storage":
+      "defaultClass": "ibmc-vpc-block-10iops-tier"
+      "persistedData":
+        "enabled": false
+      "queueManager":
+        "deleteClaim": true
+        "type": "persistent-claim"
+      "recoveryLogs":
+        "enabled": false
+  "securityContext":
+    "initVolumeAsRoot": false
+  "template":
+    "pod":
+      "containers":
+      - "env":
+        - "name": "MQSNOAUT"
+          "value": "yes"
+        "name": "qmgr"
+        "resources": {}
+  "version": "9.2.4.0-r1"
+  "web":
+    "enabled": true
+
