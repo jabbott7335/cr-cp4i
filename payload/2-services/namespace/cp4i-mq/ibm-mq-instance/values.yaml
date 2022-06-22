@@ -1,0 +1,28 @@
+"configMap":
+  "name": "oms-queue-config"
+"mqinstance":
+  "name": "mq-instance"
+  "namespace": "cp4i-mq"
+  "spec":
+    "license":
+      "accept": true
+      "license": "L-RJON-C7QG3S"
+      "use": "NonProduction"
+    "queueManager":
+      "mqsc":
+      - "configMap":
+          "items":
+          - "config.mqsc"
+          "name": "oms-queue-config"
+      "name": "QM1"
+    "template":
+      "pod":
+        "containers":
+        - "env":
+          - "name": "MQSNOAUT"
+            "value": "yes"
+          "name": "qmgr"
+    "version": "9.2.4.0-r1"
+    "web":
+      "enabled": true
+
