@@ -1,0 +1,31 @@
+"kafka_replicas": 3
+"license_use": "CloudPakForIntegrationNonProduction"
+"listeners":
+  "external":
+    "authentication":
+      "type": "scram-sha-512"
+    "type": "route"
+  "tls":
+    "authentication":
+      "type": "tls"
+"name": "es-instance"
+"requestIbmServices_iam": true
+"requestIbmServices_monitoring": true
+"resources":
+  "limits":
+    "cpu": "1"
+    "memory": "2Gi"
+  "requests":
+    "cpu": "100m"
+    "memory": "128Mi"
+"storage_kafka":
+  "class": "ibmc-vpc-block-10iops-tier"
+  "size": "10Gi"
+  "type": "persistent-claim"
+"storage_zookeeper":
+  "class": "ibmc-vpc-block-10iops-tier"
+  "size": "4Gi"
+  "type": "persistent-claim"
+"version": "10.5.0"
+"zookeeper_replicas": 3
+
