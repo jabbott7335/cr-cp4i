@@ -1,0 +1,25 @@
+"ibm_ace_designer":
+  "couchdb":
+    "replicas": 1
+    "storage":
+      "class": "ibmc-vpc-block-10iops-tier"
+      "size": "10Gi"
+      "type": "persistent-claim"
+  "designerFlowsOperationMode": "local"
+  "designerMappingAssist":
+    "enabled": true
+    "incrementalLearning":
+      "schedule": "Every 15 days"
+      "storage":
+        "class": "ocs-storagecluster-cephfs"
+        "type": "persistent-claim"
+      "useIncrementalLearning": true
+  "isMapAssistRequired": false
+  "license":
+    "accept": true
+    "license": "L-KSBM-C87FU2"
+    "use": "CloudPakForIntegrationNonProduction"
+  "name": "ibm-ace-designer"
+  "useCommonServices": true
+  "version": "12.0.2.0-r2"
+
