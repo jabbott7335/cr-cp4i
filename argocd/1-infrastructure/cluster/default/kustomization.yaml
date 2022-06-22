@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - base/namespace-cp4i-es.yaml
   - base/namespace-cp4i-mq-cluster.yaml
+  - base/namespace-cp4i-mq.yaml
   - base/namespace-cp4i-pn.yaml
   - base/namespace-toolkit.yaml
   - base/openshift-marketplace-ibm-entitlement-key.yaml
