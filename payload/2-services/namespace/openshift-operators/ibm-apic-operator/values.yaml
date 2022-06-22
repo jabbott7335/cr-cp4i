@@ -1,0 +1,11 @@
+"ibm_apic_operator":
+  "subscriptions":
+    "ibmapic":
+      "name": "ibm-apiconnect"
+      "subscription":
+        "channel": "v2.4"
+        "installPlanApproval": "Automatic"
+        "name": "ibm-apiconnect"
+        "source": "ibm-operator-catalog"
+        "sourceNamespace": "openshift-marketplace"
+
