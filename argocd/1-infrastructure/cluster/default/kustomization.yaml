@@ -1,6 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - base/namespace-cp4i-ace.yaml
   - base/namespace-cp4i-es.yaml
   - base/namespace-cp4i-mq-cluster.yaml
   - base/namespace-cp4i-pn.yaml
