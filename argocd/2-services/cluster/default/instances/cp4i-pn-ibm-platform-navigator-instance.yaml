@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cp4i-pn-ibm-platform-navigator-instance
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: cp4i-pn
+    server: https://kubernetes.default.svc
+  project: 2-services
+  source:
+    path: payload/2-services/namespace/cp4i-pn/ibm-platform-navigator-instance
+    repoURL: https://github.com/jabbott7335/cr-cp4i
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values.yaml
+      releaseName: ibm-platform-navigator-instance
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  ignoreDifferences: []

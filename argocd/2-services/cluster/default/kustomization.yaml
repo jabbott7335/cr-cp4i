@@ -4,3 +4,4 @@ resources:
   - base/cp4i-es-es-instance.yaml
   - base/cp4i-mq-cluster-ibm-mq-uniform-cluster-instance.yaml
   - instances/cp4i-apic-ibm-cp4i-apic-instance.yaml
+  - instances/cp4i-pn-ibm-platform-navigator-instance.yaml
